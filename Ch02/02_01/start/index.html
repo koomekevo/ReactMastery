@@ -27,10 +27,16 @@
         );
       }
 
+      const dishes = [ "Chicken and Pasta", "Chips and Masala", "Potatoes and Bread" ];
+    
       function Main(props) {
         return (
           <section>
-            <p>This is the most {props.adjective} Kitchen</p>
+            <ul>
+              {props.dishes.map((dish) => (
+                <li>{dish}</li>
+              ))}
+            </ul>
           </section>
         );
       }
@@ -47,7 +53,7 @@
         return (
           <div>
             <Header name="Bob" />
-            <Main adjective="amazing" />
+            <Main adjective="amazing" dishes={dishes} />
             <Footer year={new Date().getFullYear()} />
           </div>
         );
