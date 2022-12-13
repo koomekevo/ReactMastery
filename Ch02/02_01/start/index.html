@@ -19,18 +19,26 @@
   <body>
     <div id="root"></div>
     <script type="text/babel">
-      function Header() {
+      function Header(props) {
         return (
           <header>
-            <h1>Kevin's Kitchen</h1>
+            <h1>{props.name} Kitchen</h1>
           </header>
         );
       }
 
-      function Main() {
+      function Main(props) {
         return (
           <section>
-            <p>This is the main Kitchen</p>
+            <p>This is the most {props.adjective} Kitchen</p>
+          </section>
+        );
+      }
+
+      function Footer(props) {
+        return (
+          <section>
+            <p>Copyright {props.year}</p>
           </section>
         );
       }
@@ -38,8 +46,9 @@
       function App() {
         return (
           <div>
-            <Header />
-            <Main />
+            <Header name="Bob" />
+            <Main adjective="amazing" />
+            <Footer year={new Date().getFullYear()} />
           </div>
         );
       }
