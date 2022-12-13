@@ -31,17 +31,22 @@
         "Chicken and Pasta",
         "Chips and Masala",
         "Potatoes and Bread",
-        "Pizza"
+        "Pizza",
       ];
 
       const dishObjects = dishes.map((dish, i) => ({
         id: i,
-        title: dish
-      }))
+        title: dish,
+      }));
 
       function Main(props) {
         return (
           <section>
+            <img
+              height={200}
+              src="https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              alt="Image of waiter serving"
+            />
             <ul>
               {props.dishes.map((dish) => (
                 <li key={dish.id}>{dish.title}</li>
