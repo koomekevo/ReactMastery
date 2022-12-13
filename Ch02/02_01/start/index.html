@@ -27,14 +27,19 @@
         );
       }
 
-      const dishes = [ "Chicken and Pasta", "Chips and Masala", "Potatoes and Bread" ];
-    
+      const dishes = [
+        "Chicken and Pasta",
+        "Chips and Masala",
+        "Potatoes and Bread",
+        "Pizza"
+      ];
+
       function Main(props) {
         return (
           <section>
             <ul>
-              {props.dishes.map((dish) => (
-                <li>{dish}</li>
+              {props.dishes.map((dish, i) => (
+                <li key={i}>{dish}</li>
               ))}
             </ul>
           </section>
