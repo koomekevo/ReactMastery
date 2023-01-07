@@ -1,5 +1,9 @@
 import './App.css';
 
+const cities = ["Nairobi", "Mombasa", "Nakuru"];
+
+console.log(cities[0]);
+
 function App({ library }) {
   return (
     <div className="App">
