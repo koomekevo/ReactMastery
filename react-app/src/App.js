@@ -7,6 +7,7 @@ function App() {
   return (
     <div className="App">
       <h1>Current emotion is {emotion}</h1>
+      <button onClick={() => setEmotion("sad")}>Change Emotion</button>
     </div>
   );
 }
