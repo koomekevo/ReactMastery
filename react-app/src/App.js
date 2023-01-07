@@ -9,6 +9,7 @@ function App() {
     e.preventDefault();
     const title = txtTitle.current.value;
     const color = hexColor.current.value;
+    alert(`${title}, ${color}`);
   }
   return (
     <form onSubmit={submit}>
