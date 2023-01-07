@@ -1,8 +1,9 @@
 import './App.css';
 
-const cities = ["Nairobi", "Mombasa", "Nakuru"];
+const [firstCity, secondCity] = ["Nairobi", "Mombasa", "Nakuru"];
 
-console.log(cities[0]);
+console.log(firstCity);
+console.log(secondCity);
 
 function App({ library }) {
   return (
