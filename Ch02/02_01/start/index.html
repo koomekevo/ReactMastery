@@ -11,7 +11,7 @@
       crossorigin
     ></script>
     <script
-      src="https://unpkg.com/browse/babel-standalone@6.26.0/babel.min.js"
+      src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"
       crossorigin
     ></script>
     <title>React ⚛️</title>
@@ -19,17 +19,62 @@
   <body>
     <div id="root"></div>
     <script type="text/babel">
-      let robot = "🤖";
-      let cowboy = "🤠";
-      let name = "React";
-      ReactDOM.render(
-        <ul>
-          <li>{robot}</li>
-          <li>{cowboy}</li>
-          <li>{name.toUpperCase()}</li>
-        </ul>,
-        document.getElementById("root")
-      );
+      function Header(props) {
+        return (
+          <header>
+            <h1>{props.name} Kitchen</h1>
+          </header>
+        );
+      }
+
+      const dishes = [
+        "Chicken and Pasta",
+        "Chips and Masala",
+        "Potatoes and Bread",
+        "Pizza",
+      ];
+
+      const dishObjects = dishes.map((dish, i) => ({
+        id: i,
+        title: dish,
+      }));
+
+      function Main(props) {
+        return (
+          <section>
+            <img
+              height={200}
+              src="https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              alt="Image of waiter serving"
+            />
+            <ul>
+              {props.dishes.map((dish) => (
+                <li key={dish.id}>{dish.title}</li>
+              ))}
+            </ul>
+          </section>
+        );
+      }
+
+      function Footer(props) {
+        return (
+          <section>
+            <p>Copyright {props.year}</p>
+          </section>
+        );
+      }
+
+      function App() {
+        return (
+          <React.Fragment>
+            <Header name="Bob" />
+            <Main adjective="amazing" dishes={dishObjects} />
+            <Footer year={new Date().getFullYear()} />
+          </React.Fragment>
+        );
+      }
+
+      ReactDOM.render(<App />, document.getElementById("root"));
     </script>
   </body>
 </html>
